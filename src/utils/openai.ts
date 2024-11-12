@@ -107,9 +107,7 @@ const createChatCompletion = async (
 
 const sanitizeMessage = (message: string) =>
 	message
-		.trim()
-		.replace(/[\n\r]/g, '')
-		.replace(/(\w)\.$/, '$1');
+		.trim();
 
 const deduplicateMessages = (array: string[]) => Array.from(new Set(array));
 
@@ -139,6 +137,7 @@ export const generateCommitMessage = async (
 	maxLength: number,
 	type: CommitType,
 	timeout: number,
+	draft: string,
 	proxy?: string
 ) => {
 	try {
@@ -149,7 +148,7 @@ export const generateCommitMessage = async (
 				messages: [
 					{
 						role: 'system',
-						content: generatePrompt(locale, maxLength, type),
+						content: generatePrompt(locale, maxLength, type, draft),
 					},
 					{
 						role: 'user',
@@ -160,7 +159,7 @@ export const generateCommitMessage = async (
 				top_p: 1,
 				frequency_penalty: 0,
 				presence_penalty: 0,
-				max_tokens: 200,
+				max_tokens: 500,
 				stream: false,
 				n: completions,
 			},

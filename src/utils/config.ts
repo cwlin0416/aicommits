@@ -71,6 +71,13 @@ const configParsers = {
 
 		return type as CommitType;
 	},
+	draft(draft?: string) {
+		if (!draft) {
+			return '';
+		}
+		
+		return draft;
+	},
 	proxy(url?: string) {
 		if (!url || url.length === 0) {
 			return undefined;
@@ -82,7 +89,7 @@ const configParsers = {
 	},
 	model(model?: string) {
 		if (!model || model.length === 0) {
-			return 'gpt-3.5-turbo';
+			return 'chatgpt-4o-latest';
 		}
 
 		return model as TiktokenModel;

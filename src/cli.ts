@@ -42,6 +42,11 @@ cli(
 				description: 'Type of commit message to generate',
 				alias: 't',
 			},
+			draft: {
+				type: String,
+				description: 'The draft of those changes',
+				alias: 'd',
+			}
 		},
 
 		commands: [configCommand, hookCommand],
