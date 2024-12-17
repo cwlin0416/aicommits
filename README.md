@@ -66,6 +66,14 @@ aicommits --all # or -a
 
 > 👉 **Tip:** Use the `aic` alias if `aicommits` is too long for you.
 
+#### Generate commit with personalized prompt
+
+If AI model couldn't figure out your intention, you can use args to let it know what did you do.
+
+```sh
+aicommits --draft 'Have a very huge refactor'
+```
+
 #### Generate multiple recommendations
 
 Sometimes the recommended commit message isn't the best so you want it to generate a few to pick from. You can generate multiple commit messages at once by passing in the `--generate <i>` flag, where 'i' is the number of generated messages:
