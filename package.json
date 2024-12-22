@@ -19,6 +19,7 @@
 		"aic": "./dist/cli.mjs"
 	},
 	"scripts": {
+		"prepare": "npm run build",
 		"build": "pkgroll --minify",
 		"lint": "",
 		"type-check": "tsc",
