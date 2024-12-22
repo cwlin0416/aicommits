@@ -19,16 +19,14 @@
 		"aic": "./dist/cli.mjs"
 	},
 	"scripts": {
-		"prepare": "npm run build",
 		"build": "pkgroll --minify",
 		"lint": "",
 		"type-check": "tsc",
 		"test": "tsx tests",
-		"prepack": "pnpm build && clean-pkg-json"
+		"prepack": "npm run build && clean-pkg-json"
 	},
 	"dependencies": {
-		"@dqbd/tiktoken": "^1.0.2",
-		"pkgroll": "^1.9.0"
+		"@dqbd/tiktoken": "^1.0.2"
 	},
 	"devDependencies": {
 		"@clack/prompts": "^0.7.0",
