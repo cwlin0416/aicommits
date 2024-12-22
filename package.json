@@ -27,7 +27,8 @@
 		"prepack": "pnpm build && clean-pkg-json"
 	},
 	"dependencies": {
-		"@dqbd/tiktoken": "^1.0.2"
+		"@dqbd/tiktoken": "^1.0.2",
+		"pkgroll": "^1.9.0"
 	},
 	"devDependencies": {
 		"@clack/prompts": "^0.7.0",
